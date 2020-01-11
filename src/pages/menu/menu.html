@@ -1,0 +1,80 @@
+<ion-menu [content] = "myContent">
+
+  <ion-header>
+    <ion-navbar color="danger">
+      <ion-title>
+        Menu
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content fullscreen>
+    <ion-list>
+      <ion-item-divider color="danger">Catégories</ion-item-divider>
+        <button ion-item menuClose (click) = "openHome()">
+          <h2>Accueil</h2>
+          <ion-icon item-left name="home"></ion-icon>
+        </button>
+        <button ion-item menuClose (click) = "openCategories()">
+          <h2>Catégories</h2>
+          <ion-icon item-left name="logo-buffer"></ion-icon>
+        </button>
+        <button ion-item menuClose (click) = "openRubriques()">
+          <h2>Rubriques</h2>
+          <ion-icon item-left name="apps"></ion-icon>
+        </button>
+        <button ion-item menuClose (click) = "openSocial()">
+          <h2>Réseaux Sociaux</h2>
+          <ion-icon item-left name="logo-rss"></ion-icon>
+        </button>
+        <button ion-item menuClose (click) = "openService()">
+          <h2>Service Client</h2>
+          <ion-icon item-left name="people"></ion-icon>
+        </button>
+        <button ion-item menuClose (click) = "openSearch()">
+          <h2>Rechercher</h2>
+          <ion-icon item-left name="search"></ion-icon>
+        </button>
+        <ion-item-divider color="danger">
+          Autres services
+        </ion-item-divider>
+        <button ion-item menuClose>
+          <h2>WeBuy.com MARKET</h2>
+          <ion-icon item-left name = "logo-markdown"></ion-icon>
+        </button>
+        <button ion-item menuClose>
+          <h2>WeBuy.com HOME</h2>
+          <ion-icon item-left name = "home"></ion-icon>
+        </button>
+        <button ion-item menuClose>
+          <h2>Voiture de location</h2>
+          <ion-icon item-left name = "bus"></ion-icon>
+        </button>
+        <ion-item-divider color="danger">
+          Mon Compte
+        </ion-item-divider>
+        <button ion-item menuClose>
+          <h2>WeBuy.com App</h2>
+          <p>Bienvenue !!!</p>
+          <ion-icon item-left name = "contact"></ion-icon>
+        </button>
+        <button ion-item menuClose>
+          <h2>Boite de reception</h2>
+          <p>Consultez vos messages et notifications</p>
+          <ion-icon item-left name = "mail"></ion-icon>
+        </button>
+        <button ion-item menuClose>
+          <h2>Mon Panier</h2>
+          <p>Consultez votre panier</p>
+          <ion-icon item-left name = "cart"></ion-icon>
+        </button>
+        <button ion-item menuClose>
+          <h2>A propos</h2>
+          <ion-icon item-left name = "help-circle"></ion-icon>
+        </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" #myContent [root] = "rootPage"></ion-nav>

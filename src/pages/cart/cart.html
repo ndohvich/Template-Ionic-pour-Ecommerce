@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Mon panier</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-list>
+    <button ion-item *ngFor="let article of CartItems">
+      <ion-thumbnail item-left>
+        <img [src]="article.item.pictures[0]" >
+      </ion-thumbnail>
+      <h2>{{ article.item.title }}</h2>
+      <p>
+        <ion-badge color="primary">{{article.qty}}</ion-badge> x {{article.item.price}}
+      </p>
+      <p *ngIf="article.item.availability.feed">Livraison: {{article.item.availability.feed}} FCFA</p>
+      <p>Total: {{(article.qty*article.item.price)+(article.item.availability.feed)}} FCFA</p>
+      <button ion-button color="danger">
+        <ion-icon name="mail"></ion-icon>&nbsp;
+        Contacter le vendeur
+      </button>
+      <button ion-button icon-only item-right clear>
+        <ion-icon color="rouge" name="remove-circle"></ion-icon>
+      </button>
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button ion-button block (click) ="closeModal()" color="danger">Fermer</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button block outline>Panier : {{ total }} Fcfa</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

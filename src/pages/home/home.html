@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>
+      WeBuy.com
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button menuToggle (click) = "login()">
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card fullscreen>
+    <ion-slides fullscreen autoplay="800" loop="true">
+      <ion-slide>
+       <img src="../../assets/imgs/a.jpg">
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/b.jpg">
+       </ion-slide>
+       <ion-slide>
+        <img src="../../assets/imgs/d.jpg">
+       </ion-slide>
+       <ion-slide>
+        <img src="../../assets/imgs/e.jpg">
+       </ion-slide>
+       <ion-slide>
+        <img src="../../assets/imgs/f.jpg">
+       </ion-slide>
+       <ion-slide>
+        <img src="../../assets/imgs/g.jpg">
+       </ion-slide>
+    </ion-slides>
+  </ion-card>
+
+  <ion-list>
+    <button (click) = "showDetails(article)" ion-item *ngFor="let article of Articles">
+      <ion-thumbnail item-start>
+        <img [src]="article.pictures[0]">
+      </ion-thumbnail>
+      <h3>{{article.title}}</h3>
+      <p>{{article.description}}</p>
+      <p>{{article.price}} FCFA</p>
+      <p>
+        <span *ngIf = "article.averageStar >= 1">
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+        <span *ngIf = "article.averageStar >= 2">
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+        <span *ngIf = "article.averageStar >= 3">
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+        <span *ngIf = "article.averageStar >= 4">
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+        <span *ngIf = "article.averageStar >= 5">
+          <ion-icon class="iconYellow" name="star"></ion-icon>
+        </span>
+      </p>
+    </button>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col offset-1 col-10>
+      <button ion-button round large color="danger">
+        <ion-icon name="camera"></ion-icon>&nbsp;
+          Vendre vos biens &nbsp;&nbsp;
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
